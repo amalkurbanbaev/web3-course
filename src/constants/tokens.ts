@@ -1,0 +1,364 @@
+import type { TokensByChain } from "@/types/token"
+import type { Address } from "abitype"
+import { mainnet, polygonAmoy, sepolia } from "wagmi/chains"
+
+export const MAIN_NET_ID = mainnet.id
+export const SEPOLIA = sepolia.id
+export const AMOY = polygonAmoy.id
+
+export const TOKENS = {
+  [MAIN_NET_ID]: {
+    "0x0000000000000000000000000000000000000000": {
+      name: "Ethereum",
+      symbol: "ETH",
+      image: "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
+      decimals: 18,
+    },
+    "0xdac17f958d2ee523a2206206994597c13d831ec7": {
+      name: "Tether USD",
+      symbol: "USDT",
+      decimals: 6,
+      image:
+        "https://coin-images.coingecko.com/coins/images/325/large/Tether.png?1696501661",
+    },
+    "0x6B175474E89094C44Da98b954EedeAC495271d0F": {
+      name: "Dai Stablecoin",
+      symbol: "DAI",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/9956/large/Badge_Dai.png?1696509996",
+    },
+    "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2": {
+      name: "Wrapped Ether",
+      symbol: "WETH",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/2518/large/weth.png?1696503332",
+    },
+    "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704": {
+      name: "Coinbase Wrapped Staked ETH",
+      symbol: "cbETH",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/27008/large/cbeth.png?1709186989",
+    },
+    "0x4fabb145d64652a948d72533023f6e7a623c7c53": {
+      name: "BUSD",
+      symbol: "BUSD",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/9576/large/BUSDLOGO.jpg?1696509654",
+    },
+    "0x514910771AF9Ca656af840dff83E8264EcF986CA": {
+      name: "ChainLink Token",
+      symbol: "LINK",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/877/large/chainlink-new-logo.png?1696502009",
+    },
+    "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84": {
+      name: "Liquid staked Ether 2.0",
+      symbol: "stETH",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/13442/large/steth_logo.png?1696513206",
+    },
+    "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e": {
+      name: "yearn.finance",
+      symbol: "YFI",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/11849/large/yearn.jpg?1696511720",
+    },
+    "0x0D8775F648430679A709E98d2b0Cb6250d2887EF": {
+      name: "Basic Attention Token",
+      symbol: "BAT",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/677/large/basic-attention-token.png?1696501867",
+    },
+    "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599": {
+      name: "Wrapped BTC",
+      symbol: "WBTC",
+      decimals: 8,
+      image:
+        "https://coin-images.coingecko.com/coins/images/7598/large/wrapped_bitcoin_wbtc.png?1696507857",
+    },
+    "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": {
+      name: "USD Coin",
+      symbol: "USDC",
+      decimals: 6,
+      image:
+        "https://coin-images.coingecko.com/coins/images/6319/large/usdc.png?1696506694",
+    },
+    "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b": {
+      name: "Convex Token",
+      symbol: "CVX",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/15585/large/convex.png?1696515221",
+    },
+    "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0": {
+      name: "Wrapped liquid staked Ether 2.0",
+      symbol: "wstETH",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/18834/large/wstETH.png?1696518295",
+    },
+    "0x0f5d2fb29fb7d3cfee444a200298f468908cc942": {
+      name: "Decentraland MANA",
+      symbol: "MANA",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/878/large/decentraland-mana.png?1696502010",
+    },
+    "0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e": {
+      name: "yearn.finance",
+      symbol: "YFI",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/11849/large/yearn.jpg?1696511720",
+    },
+    "0x4200000000000000000000000000000000000042": {
+      name: "Optimism",
+      symbol: "OP",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/25244/large/Optimism.png?1696524060",
+    },
+    "0x6982508145454Ce325dDbE47a25d4ec3d2311933": {
+      name: "Pepe",
+      symbol: "PEPE",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/29850/large/pepe-token.jpeg?1700195189",
+    },
+    "0xcB26E4B2eF5b1BBfe5e5D9F636C6B99795825b2c": {
+      name: "Wrapped TRON",
+      symbol: "TRX",
+      decimals: 6,
+      image: "https://cryptach.org/crypto-logo/tron.svg",
+    },
+    "0xb50721bcf8d664c30412cfbc6cf7a15145234ad1": {
+      name: "Arbitrum",
+      symbol: "ARB",
+      decimals: 18,
+      image: "https://cryptach.org/crypto-logo/arbitrum-arb-logo.svg",
+    },
+    "0x4206931337dc273a630d328da6441786bfad668f": {
+      name: "Wrapped Dogecoin",
+      symbol: "DOGE",
+      decimals: 8,
+      image: "https://cryptach.org/crypto-logo/Dogecoin%20(DOGE).svg",
+    },
+  },
+  [SEPOLIA]: {
+    "0x0000000000000000000000000000000000000000": {
+      name: "SepoliaETH",
+      symbol: "ETH",
+      image: "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
+      decimals: 18,
+    },
+    "0x8E4eCf56B8736A83CE17213187118231D3C06FFF": {
+      name: "Optimism",
+      symbol: "OP",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/25244/large/Optimism.png?1696524060",
+    },
+    "0x8aC43Ed0652168827FA3906577dD44e4819B11D1": {
+      name: "Tether USD",
+      symbol: "USDT",
+      decimals: 6,
+      image:
+        "https://coin-images.coingecko.com/coins/images/325/large/Tether.png?1696501661",
+    },
+    "0xA68ecAb53bdcFdC753378a088CfB29d42915617E": {
+      name: "Dai Stablecoin",
+      symbol: "DAI",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/9956/large/Badge_Dai.png?1696509996",
+    },
+    "0x53BB015921600B6E4b373125B90143090F957d50": {
+      name: "ChainLink Token",
+      symbol: "LINK",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/877/large/chainlink-new-logo.png?1696502009",
+    },
+    "0x8805B377F0a28846198e81120179C4Ca5c6D5318": {
+      name: "Wrapped BTC",
+      symbol: "WBTC",
+      decimals: 8,
+      image:
+        "https://coin-images.coingecko.com/coins/images/7598/large/wrapped_bitcoin_wbtc.png?1696507857",
+    },
+    "0x85d30853B690eEfa87854f240a81b4621b13FDF8": {
+      name: "USD Coin",
+      symbol: "USDC",
+      decimals: 6,
+      image:
+        "https://coin-images.coingecko.com/coins/images/6319/large/usdc.png?1696506694",
+    },
+    "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b": {
+      name: "Convex Token",
+      symbol: "CVX",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/15585/large/convex.png?1696515221",
+    },
+    "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0": {
+      name: "Wrapped liquid staked Ether 2.0",
+      symbol: "wstETH",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/18834/large/wstETH.png?1696518295",
+    },
+    "0x0f5d2fb29fb7d3cfee444a200298f468908cc942": {
+      name: "Decentraland MANA",
+      symbol: "MANA",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/878/large/decentraland-mana.png?1696502010",
+    },
+    "0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e": {
+      name: "yearn.finance",
+      symbol: "YFI",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/11849/large/yearn.jpg?1696511720",
+    },
+    "0x54d412Fee228E13A42F38bC760faEFfDFE838536": {
+      name: "Optimism",
+      symbol: "OP",
+      decimals: 18,
+      image: "https://www.optimism.io/brand/optimism-logo.svg",
+    },
+    "0x8903FE8C94F3b7db3482d53ccE000998d112cC7d": {
+      name: "Pepe",
+      symbol: "PEPE",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/29850/large/pepe-token.jpeg?1700195189",
+    },
+    "0xd445682a9B9FE0aE4053056E005f9393413407e1": {
+      name: "Wrapped TRON",
+      symbol: "TRX",
+      decimals: 6,
+      image: "https://cryptach.org/crypto-logo/tron.svg",
+    },
+    "0xf300c9bf1A045844f17B093a6D56BC33685e5D05": {
+      name: "Arbitrum",
+      symbol: "ARB",
+      decimals: 18,
+      image: "https://cryptach.org/crypto-logo/arbitrum-arb-logo.svg",
+    },
+  },
+  [AMOY]: {
+    "0x34cd8b477eb916c1c4224b2FFA80DE015cCC671b": {
+      name: "Arbitrum",
+      symbol: "ARB",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/16547/large/photo_2023-03-29_21.47.00.jpeg?1696520433",
+    },
+    "0x1519d41F48F3621bCd583aa646C95217F87D3A99": {
+      name: "Dai Stablecoin",
+      symbol: "DAI",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/9956/large/Badge_Dai.png?1696509996",
+    },
+    "0x0de27cBf804F1665eBc2F927944f54aA70cB4fC1": {
+      name: "Dogecoin",
+      symbol: "DOGE",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/5/large/dogecoin.png?1696501409",
+    },
+    "0xaa79133956a0F53Ef774c5b0e302784caF4A8Cc2": {
+      name: "ChainLink Token",
+      symbol: "LINK",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/877/large/chainlink-new-logo.png?1696502009",
+    },
+    "0x8E4eCf56B8736A83CE17213187118231D3C06FFF": {
+      name: "Optimism",
+      symbol: "OP",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/25244/large/Optimism.png?1696524060",
+    },
+    "0x0c02cb84eEF5f3EA61be9DfeC7F884dffc1fa6c0": {
+      name: "Pepe",
+      symbol: "PEPE",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/29850/large/pepe-token.jpeg?1696526736",
+    },
+    "0xEe7356FB1362fD659D03892719d424Bd8D9D8f70": {
+      name: "TRON",
+      symbol: "TRX",
+      decimals: 18,
+      image:
+        "https://coin-images.coingecko.com/coins/images/1094/large/tron-logo.png?1696502212",
+    },
+    "0x0a6DFA1eEf85B94E7e753bA222A6AcF2aE6C1a8b": {
+      name: "Tether USD",
+      symbol: "USDT",
+      decimals: 6,
+      image:
+        "https://coin-images.coingecko.com/coins/images/325/large/Tether.png?1696501661",
+    },
+    "0x6fD3B0bfB19Dc9C02f79E1e6E32444A390842700": {
+      name: "USD Coin",
+      symbol: "USDC",
+      decimals: 6,
+      image:
+        "https://coin-images.coingecko.com/coins/images/6319/large/usdc.png?1696507741",
+    },
+    "0x36Ea22735269Cb7AA2A931Dd871a73c0a9124f2B": {
+      name: "Wrapped Bitcoin",
+      symbol: "WBTC",
+      decimals: 8,
+      image:
+        "https://coin-images.coingecko.com/coins/images/7598/large/wrapped_bitcoin_wbtc.png?1696508326",
+    },
+  },
+} as const
+
+export const DEFAULT_TOKEN_ADDRESS: Address =
+  "0x0000000000000000000000000000000000000000"
+
+export const DEFAULT_TOKEN = {
+  address: DEFAULT_TOKEN_ADDRESS,
+  name: "Ether",
+  symbol: "ETH",
+  decimals: 18,
+  image: "https://cryptach.org/crypto-logo/ethereum-eth-logo.svg",
+}
+
+export const TOKENS_MAP = Object.fromEntries(
+  Object.entries(TOKENS).map(([chain, tokens]) => {
+    const withDefault = {
+      [DEFAULT_TOKEN_ADDRESS]: DEFAULT_TOKEN,
+      ...tokens,
+    }
+    return [chain, new Map(Object.entries(withDefault))]
+  }),
+) as TokensByChain
+
+export const LANDING_PAGE_TOKENS = [
+  "WBTC",
+  "OP",
+  "PEPE",
+  "TRX",
+  "USDC",
+  "ARB",
+  "DAI",
+  "DOGE",
+  "LINK",
+  "USDT",
+]

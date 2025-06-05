@@ -1,0 +1,45 @@
+@theme {
+	--animate-flicker: electric-flicker 1.8s steps(1, end);
+
+	@keyframes electric-flicker {
+		0% {
+			opacity: 1;
+		}
+		5% {
+			opacity: 0.3;
+		}
+		10% {
+			opacity: 0.8;
+		}
+		15% {
+			opacity: 0.2;
+		}
+		20% {
+			opacity: 0.9;
+		}
+		25% {
+			opacity: 0.1;
+		}
+		30% {
+			opacity: 1;
+		}
+		40% {
+			opacity: 0.4;
+		}
+		50% {
+			opacity: 1;
+		}
+		60% {
+			opacity: 0.6;
+		}
+		70% {
+			opacity: 0.95;
+		}
+		85% {
+			opacity: 0.3;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+}
